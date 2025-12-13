@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhargav - Full-Stack Developer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0f;
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.8);
+            padding: 1rem 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+        
+        .logo { font-size: 1.5rem; font-weight: bold; color: #00f5ff; }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-link { color: white; text-decoration: none; }
+        .nav-link:hover { color: #00f5ff; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        .section {
+            padding: 80px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        #hero { background: linear-gradient(45deg, #0a0a0f, #1a1a2e); }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #00f5ff, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #00f5ff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 10px 10px 10px 0;
+            transition: transform 0.3s;
+        }
+        
+        .btn:hover { transform: scale(1.05); }
+        
+        .btn-outline {
+            background: transparent;
+            color: #00f5ff;
+            border: 2px solid #00f5ff;
+        }
+        
+        .glass {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .project-locations {
+            background: rgba(0, 245, 255, 0.1);
+            border: 1px solid #00f5ff;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-family: monospace;
+        }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        
+        .projects-grid { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #00f5ff;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hero-content h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">BHARGAV</div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero" class="section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hello, I'm <span style="color: #00f5ff;">Bhargav</span></h1>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Frontend Developer</p>
+                <a href="#projects" class="btn">View Projects</a>
+                <a href="#" class="btn btn-outline" onclick="downloadResume()">Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="glass">
+                <p>Frontend developer passionate about building modern web applications.experience with JavaScript, React, Node.js, and cloud technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="grid">
+                <div class="glass">
+                    <h3>Frontend</h3>
+                    <p>HTML, CSS, JavaScript, React, Tailwind</p>
+                </div>
+                <div class="glass">
+                    <h3>Backend</h3>
+                    <p>Node.js, Express, MongoDB, PostgreSQL</p>
+                </div>
+                <div class="glass">
+                    <h3>Tools</h3>
+                    <p>Git, Docker, AWS, Vercel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="glass">
+                    <h3>🛒 E-Commerce Platform</h3>
+                    <p><strong>Full-stack shopping platform</strong> with cart, payments, authentication & admin dashboard.</p>
+                    <p><strong>Tech:</strong> React • Node.js • Express • MongoDB • Stripe</p>
+                    
+                    <div class="project-locations">
+                        <strong>📁 Frontend:</strong> <code>D:\ecommerce\frontend</code><br>
+                        <strong>📁 Backend:</strong> <code>D:\ecommerce\backend</code>
+                    </div>
+                    
+                    <a href="#" class="btn" onclick="runEcommerce()">🚀 Run Project</a>
+                    <a href="#" class="btn btn-outline" onclick="openEcommerceFolders()">📂 Open Folders</a>
+                </div>
+                <div class="glass">
+                    <h3>📝 Task Manager</h3>
+                    <p>Real-time collaboration app with drag & drop boards.</p>
+                    <p><strong>Tech:</strong> Next.js • Socket.io • MongoDB</p>
+                    <a href="#" class="btn">Demo</a>
+                    <a href="#" class="btn btn-outline">Code</a>
+                </div>
+                <div class="glass">
+                    <h3>🌤️ Weather Dashboard</h3>
+                    <p>Modern weather app with forecasts & location tracking.</p>
+                    <p><strong>Tech:</strong> React • OpenWeather API • Chart.js</p>
+                    <a href="#" class="btn">Demo</a>
+                    <a href="#" class="btn btn-outline">Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="grid">
+                <div class="glass">
+                    <h3>Links</h3>
+                    <p><a href="#" style="color: #00f5ff;">GitHub</a></p>
+                    <p><a href="#" style="color: #00f5ff;">LinkedIn</a></p>
+                    <p><a href="mailto:bhargav@email.com" style="color: #00f5ff;">Email</a></p>
+                </div>
+                <form class="glass" style="max-width: 500px;">
+                    <input type="text" placeholder="Name" style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:1px solid #00f5ff; background:transparent; color:white;">
+                    <input type="email" placeholder="Email" style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:1px solid #00f5ff; background:transparent; color:white;">
+                    <textarea placeholder="Message" rows="4" style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:1px solid #00f5ff; background:transparent; color:white;"></textarea>
+                    <button type="submit" class="btn" style="width:100%;">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        function runEcommerce() {
+            alert('🚀 E-COMMERCE PLATFORM - RUN COMMANDS:\n\n' +
+                  '1. Backend:\n' +
+                  '   cd D:\\ecommerce\\backend\n' +
+                  '   npm install\n' +
+                  '   npm start\n\n' +
+                  '2. Frontend:\n' +
+                  '   cd D:\\ecommerce\\frontend\n' +
+                  '   npm install\n' +
+                  '   npm start\n\n' +
+                  '✅ Backend: http://localhost:5000\n' +
+                  '✅ Frontend: http://localhost:3000');
+        }
+        
+        function openEcommerceFolders() {
+            alert('📁 OPENING E-COMMERCE FOLDERS:\n\n' +
+                  '• Frontend: D:\\ecommerce\\frontend\n' +
+                  '• Backend: D:\\ecommerce\\backend\n\n' +
+                  '💡 Open in VS Code or File Explorer!');
+            
+            // Try to open folders (works in some browsers)
+            window.location.href = 'file:///D:/ecommerce/frontend';
+            setTimeout(() => {
+                window.location.href = 'file:///D:/ecommerce/backend';
+            }, 500);
+        }
+
+        // Resume download
+        function downloadResume() {
+            alert('Download resume.pdf (replace with your link)');
+        }
+
+        // Form submit
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message sent! (placeholder)');
+        });
+    </script>
+</body>
+</html>
